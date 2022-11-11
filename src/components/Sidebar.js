@@ -11,14 +11,28 @@ import { useUserContext } from '../context/user_context'
 const Sidebar = () => {
   const isOpen = true
   return <SidebarContainer>
-    <aside className={`${isOpen ? 'sidebar show-sidebar': 'show-sidebar'} `}>
+    <aside className={`${isOpen ? 'sidebar show-sidebar': 'sidebar'} `}>
     <div className="sidebar-header">
       <img src={logo} className = 'logo' alt="" />
       <button className="close-btn" type='button'>
         <FaTimes/>
       </button>
     </div>
+    <ul className="links">
+      {links.map((link) => {
+        return(
+          <li key = {link.id}>
+            <Link to = {link.url}>{link.text}</Link>
+          </li>
+        )
+      })}
+      <li >
+        <Link to = '/checkout'>Checkout</Link>
+      </li>
+    </ul>
+    <CartButtons/>
     </aside>
+   
   </SidebarContainer>
 }
 
