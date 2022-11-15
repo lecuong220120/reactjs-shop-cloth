@@ -5,7 +5,26 @@ import heroBcg from '../assets/hero-bcg.jpeg'
 import heroBcg2 from '../assets/hero-bcg-2.jpeg'
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return <Wrapper className='section-center'>
+    <article className="content">
+      <h1>
+        design your <br />
+        comfort zone
+      </h1>
+      <p>
+      Quốc hội quyết định giá khởi điểm và tiền đặt trước của một biển số ôtô đưa ra đấu giá là 40 triệu đồng, bước giá 5 triệu đồng.
+
+Chiều 15/11,ông an, trang thông tin điện tử Cục Cảnh sát giao thông, trang thông tin điện tử trực tuyến của tổ chức đấu giá tài sản.
+      </p>
+      <Link to='/product' className = "btn hero-btn">
+        shop now
+      </Link>
+    </article>
+    <article className='img-container'>
+      <img src={heroBcg} alt="xxxx" className='main-img'/>
+      <img src={heroBcg2} alt="aaaa" className='accent-img'/>
+    </article>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`

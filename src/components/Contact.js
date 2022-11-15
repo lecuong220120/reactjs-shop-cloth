@@ -2,7 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Contact = () => {
-  return <h4>contact section</h4>
+  return <Wrapper>
+    <div className="section-center">
+      <h3>Tham gia với chúng tôi giảm gi 20%</h3>
+      <div className="content">
+        <p>
+        Quốc hội quyết định giá khởi điểm và tiền đặt trước của một biển số ôtô đưa ra đấu giá là 40 triệu đồng, bước giá 5 triệu đồng.
+
+Chiều 15/11, với 473/489 đạu giá tài sản.
+        </p>
+        <form action="" className="contact-form">
+          <input type="email" className="form-input"  placeholder='Nhập email'/>
+          <button className="submit-btn">
+            Đăng ký
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </Wrapper>
 }
 const Wrapper = styled.section`
   padding: 5rem 0;

@@ -3,7 +3,34 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
-  return <h4>services </h4>
+  return <Wrapper>
+      <div className="section-center">
+        <article className='header'>
+          <h3>
+            custom furniture<br/>
+            build only you
+          </h3>
+          <p>
+          Quốc hội quyết định giá khởi điểm và tiền đặt trước của một biển số ôtô đưa ra đấu giá là 40 triệu đồng, bước giá 5 triệu đồng.
+
+Chiều 15/11, với 473/489 đại biểu thông tin điện tử trực tuyến của tổ chức đấu giá tài sản.
+          </p>
+        </article>
+        <div className="services-center">
+          {services.map((service)=>{
+            return(
+              <article className="service" id = {service.id}>
+                <span className="icon">
+                    {service.icon}
+                </span>
+                <h4>{service.title}</h4>
+                <p>{service.text}</p>
+              </article>
+            )
+          })}
+        </div>
+      </div>
+     </Wrapper>
 }
 
 const Wrapper = styled.section`
