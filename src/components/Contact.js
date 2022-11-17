@@ -11,9 +11,10 @@ const Contact = () => {
 
 Chiều 15/11, với 473/489 đạu giá tài sản.
         </p>
-        <form action="" className="contact-form">
-          <input type="email" className="form-input"  placeholder='Nhập email'/>
-          <button className="submit-btn">
+        <form  className="contact-form"  action ="https://formspree.io/f/xwkzyrqy"
+  method="POST">
+          <input type="email" className="form-input" name="email" placeholder='Nhập email'/>
+          <button className="submit-btn" type='submit'>
             Đăng ký
           </button>
 

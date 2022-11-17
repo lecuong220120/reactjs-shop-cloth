@@ -16,7 +16,7 @@ const Hero = () => {
 
 Chiều 15/11,ông an, trang thông tin điện tử Cục Cảnh sát giao thông, trang thông tin điện tử trực tuyến của tổ chức đấu giá tài sản.
       </p>
-      <Link to='/product' className = "btn hero-btn">
+      <Link to='/products' className = "btn hero-btn">
         shop now
       </Link>
     </article>
