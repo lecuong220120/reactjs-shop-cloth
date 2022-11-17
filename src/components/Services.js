@@ -19,7 +19,7 @@ Chiều 15/11, với 473/489 đại biểu thông tin điện tử trực tuyế
         <div className="services-center">
           {services.map((service)=>{
             return(
-              <article className="service" id = {service.id}>
+              <article className="service" key = {service.id}>
                 <span className="icon">
                     {service.icon}
                 </span>
