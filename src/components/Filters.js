@@ -7,7 +7,7 @@ import { FaCheck } from 'react-icons/fa'
 const Filters = () => {
   const {
     filters:{
-      text, category, company, color, min_price, max_price, shipping,
+      text, category, company, color, min_price, max_price, shipping,price
     },
     updateFilters,
     clearFilters,
@@ -21,7 +21,6 @@ const Filters = () => {
       <form action="" onSubmit={(e) =>e.preventDefault()}>
         <div className="form-control">
           <input type="text" name='text' placeholder='search text' className = "search-input" value={text} onChange = {updateFilters}/>
-
         </div>
         <div className="form-control">
           <h5>Category</h5>
@@ -32,12 +31,48 @@ const Filters = () => {
               <button key={index} onClick = {updateFilters} name = "category" type='button' className={`${category === c.toLowerCase() ? 'active': null}`}>
                 {c}
                 </button>
-                
               )
             })}
             </div>
         </div>
+        <div className="form-control">
+          <h5>Company</h5>
+          <select name='company' value={company} onChange = {updateFilters} className = "company">
+            {companies.map((c,index) =>{
+              return (
+                <option key={index} value={c}>{c}</option>
+              )
+            })}
+          </select>
+        </div>
+        <div className="form-control">
+          <h5>colors</h5>
+          <div className="colors">
+            {
+              colors.map((c, index)=>{
+                if(c === 'all'){
+                  return <button name = "color" onClick={updateFilters} data-color = 'all' className={`${color === 'all' ? 'all-btn active' : 'all-btn'}`}>all</button>
+                }
+                return <button key={index} name="color" style={{background: c}} className={`${color === c ? 'color-btn active': 'color-btn'}`} data-color = {c} onClick={updateFilters}>
+                    {color === c? <FaCheck/> : null}
+                </button>
+              })
+            }
+          </div>
+        </div>
+        <div className="form-control">
+          <h5>price</h5>
+          <p className="price">{formatPrice(price)}</p>
+          <input type='range' name='price' onChange={updateFilters} min={min_price} max = {max_price} value={price}/>
+        </div>
+        <div className="form-control shipping">
+          <label htmlFor="shipping">
+            freeshipping
+          </label>
+          <input type="checkbox" onChange={updateFilters} checked={shipping} name="shipping" id = "shipping"/>
+        </div>
       </form>
+      <button type='butoon' className='clear-btn' onClick={clearFilters}>{' '} clear filters</button>
     </div>
   </Wrapper>
 }
